@@ -1,0 +1,122 @@
+{
+  "title": "AI Agents 是什麼？",
+  "audience": "完全沒接觸過 AI Agents 的同學",
+  "slides": [
+    {
+      "id": "s01", "layout": "title",
+      "title": "AI Agents 是什麼？",
+      "subtitle": "10 分鐘看懂：它和聊天機器人差在哪、由什麼組成、什麼時候該用",
+      "meta": "內容全部來自我自己建立的 LLM Wiki，每個要點都可以點開看原文引文"
+    },
+    {
+      "id": "s02", "layout": "cards",
+      "title": "先給一個定義",
+      "lead": "不同機構的說法略有差別，但都指向同一件事：代替使用者去完成任務。",
+      "cards": [
+        { "label": "OpenAI", "claim": "AGENT-1" },
+        { "label": "Google Cloud", "claim": "AGENT-2" },
+        { "label": "多了什麼能力", "claim": "AGENT-3" }
+      ],
+      "plain": "一般的聊天機器人是你問一句、它答一句。Agent 的重點是「替你把事情做完」。"
+    },
+    {
+      "id": "s03", "layout": "cards",
+      "title": "Agent 由什麼組成（一）：三個核心元件",
+      "lead": "OpenAI 的指南把 Agent 拆成三塊，可以把它想成「大腦、手、規則」。",
+      "cards": [
+        { "label": "模型（大腦）", "claim": "COMP-2" },
+        { "label": "工具（手）", "claim": "COMP-3" },
+        { "label": "指令（規則）", "claim": "COMP-4" }
+      ],
+      "claims_extra": ["COMP-1"],
+      "plain": "「大腦、手、規則」是我為了好記加的比喻，不是原文用語。"
+    },
+    {
+      "id": "s04", "layout": "cards",
+      "title": "Agent 由什麼組成（二）：規劃、記憶、工具",
+      "lead": "Lilian Weng 從另一個角度拆解：LLM 是大腦，周圍有規劃、記憶、工具使用這幾種能力。",
+      "cards": [
+        { "label": "規劃", "claim": "COMP-6" },
+        { "label": "短期記憶", "claim": "COMP-7" },
+        { "label": "長期記憶", "claim": "COMP-8" },
+        { "label": "工具使用", "claim": "COMP-9" }
+      ],
+      "claims_extra": ["AGENT-8"],
+      "plain": "這一頁和上一頁是不同作者切的角度，但都包含 LLM 和工具。"
+    },
+    {
+      "id": "s05", "layout": "loop",
+      "title": "Agent 怎麼運作：想、做、看結果",
+      "lead": "Agent 不是一次回答完，而是在迴圈裡反覆進行。",
+      "steps": [
+        { "label": "推理", "claim": "LOOP-1" },
+        { "label": "行動", "claim": "LOOP-1" },
+        { "label": "環境回饋", "claim": "LOOP-6" }
+      ],
+      "guards": [ "LOOP-8", "LOOP-7" ],
+      "claims_extra": ["WA-4", "LOOP-2", "LOOP-3"],
+      "plain": "迴圈要有出口：到達停止條件就結束，遇到問題就停下來問人。"
+    },
+    {
+      "id": "s06", "layout": "twocol",
+      "title": "Workflow 和 Agent 差在哪",
+      "lead": "兩者都用 LLM 和工具，差別在「流程是誰決定的」。",
+      "cols": [
+        { "heading": "Workflow：流程是人寫好的", "claims": ["WA-1"] },
+        { "heading": "Agent：流程由模型決定", "claims": ["WA-2", "WA-5"] }
+      ],
+      "claims_extra": ["WA-3"],
+      "plain": "如果每次的步驟都一樣，用 Workflow 就好；步驟會隨情況變，才需要 Agent。"
+    },
+    {
+      "id": "s07", "layout": "cards",
+      "title": "五種常見的 Workflow 模式",
+      "lead": "Anthropic 把 LLM 串起來的常見做法，整理成五種。",
+      "cards": [
+        { "label": "提示鏈", "claim": "PAT-1" },
+        { "label": "路由", "claim": "PAT-2" },
+        { "label": "平行化", "claim": "PAT-3" },
+        { "label": "協調者—工作者", "claim": "PAT-4" },
+        { "label": "評估者—優化者", "claim": "PAT-5" }
+      ],
+      "plain": "這五種是 Anthropic 這篇文章的分類，不是業界唯一標準。"
+    },
+    {
+      "id": "s08", "layout": "cards",
+      "title": "任務變複雜：多個 Agent 怎麼分工",
+      "lead": "OpenAI 與 Google 都描述了從單一 Agent 到多 Agent 的做法。",
+      "cards": [
+        { "label": "單一 Agent", "claim": "MULTI-1" },
+        { "label": "管理者模式", "claim": "MULTI-2" },
+        { "label": "交接", "claim": "MULTI-3" }
+      ],
+      "claims_extra": ["MULTI-4"],
+      "plain": "先從單一 Agent 開始，不夠用再拆。"
+    },
+    {
+      "id": "s09", "layout": "twocol",
+      "title": "什麼時候該用？代價是什麼？",
+      "lead": "Agent 不是預設答案。兩家公司的指南都先提醒你確認是否真的需要。",
+      "cols": [
+        { "heading": "先確認需不需要", "claims": ["USE-1", "USE-3", "USE-4"] },
+        { "heading": "要付出的代價", "claims": ["RISK-1", "RISK-2", "RISK-3"] }
+      ],
+      "claims_extra": ["USE-5", "RISK-6"],
+      "plain": "能用固定規則解決的，就不要為了「聽起來厲害」硬做 Agent。"
+    },
+    {
+      "id": "s10", "layout": "quiz",
+      "title": "自我檢查：你學會了嗎？",
+      "lead": "先自己想，再按「看答案」。",
+      "items": [
+        { "q": "Workflow 和 Agent 最大的差別是什麼？", "claims": ["WA-1", "WA-2"] },
+        { "q": "OpenAI 說 Agent 最基本有哪三個元件？", "claims": ["COMP-1", "COMP-2", "COMP-3", "COMP-4"] },
+        { "q": "什麼情況下，其實不需要 Agent？", "claims": ["USE-1", "USE-4"] }
+      ]
+    },
+    {
+      "id": "s11", "layout": "sources",
+      "title": "資料來源"
+    }
+  ]
+}

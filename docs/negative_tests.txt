@@ -1,0 +1,27 @@
+## N1 改一個字的引文（模擬 AI 偷改原文）
+警告： workflow-patterns.md 只有一個來源（['S1']），沒有交叉驗證
+警告： workflow-vs-agent.md 只有一個來源（['S1']），沒有交叉驗證
+
+發現 1 個錯誤：
+  - ai-agent.md AGENT-1: 引文沒有出現在 S3 的原文裡 → Agents are systems that independently finish tasks on your b
+exit=1
+
+## N2 陳述裡加入原文沒有的數字
+警告： workflow-patterns.md 只有一個來源（['S1']），沒有交叉驗證
+警告： workflow-vs-agent.md 只有一個來源（['S1']），沒有交叉驗證
+
+發現 1 個錯誤：
+  - ai-agent.md AGENT-1: 陳述出現數字 90，但引文裡沒有
+exit=1
+
+## N3 簡報引用不存在的主張、導讀文字出現沒有依據的數字
+發現 2 個問題（大綱檢查）：
+  - s02: 引用了不存在的主張 AGENT-99
+  - s06: 導讀文字出現數量「40」，但本頁的主張裡沒有，也不等於本頁並列的項目數 [2]
+exit=1
+
+## N4 核心主張被藏進折疊區
+發現 2 個問題（大綱＋成品檢查）：
+  - s05: 核心主張 LOOP-1 沒有直接顯示（只藏在折疊區或根本沒畫出來）
+  - s05: 核心主張 LOOP-1 沒有直接顯示（只藏在折疊區或根本沒畫出來）
+exit=1

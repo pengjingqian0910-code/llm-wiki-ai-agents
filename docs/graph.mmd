@@ -1,0 +1,18 @@
+flowchart TB
+  A["① 取得資料<br/>WebSearch 找來源<br/>WebFetch 抽取原文引文"] --> B["② Ingest<br/>存 raw/、寫來源頁<br/>整理成概念頁的主張"]
+  B --> L{"L 檢查 Wiki<br/>引文在原文裡？<br/>有沒有被截斷？<br/>數字有出處？"}
+  L -- 不通過 --> B
+  L -- 通過 --> I["I 更新索引與 log"]
+  I --> O1["③ 寫簡報大綱<br/>只能引用 Wiki 主張編號"]
+  O1 --> O{"O 檢查大綱<br/>主張存在？<br/>數量詞有依據？<br/>8 個概念頁都用到？"}
+  O -- 不通過 --> O1
+  O -- 通過 --> G["G 產生 HTML<br/>要點與原文由程式從 Wiki 填入"]
+  G --> H{"H 檢查成品<br/>引文一致？操作正常？<br/>放得進畫面？核心主張看得到？<br/>再用眼睛看截圖"}
+  H -- 版面或顯示問題 --> G
+  H -- 內容或結構問題 --> O1
+  H -- 通過 --> Z(["完成：教學 HTML 簡報"])
+  N(["加入新資料"]) -.-> A
+  classDef gate fill:#F7EBD2,stroke:#B27A12,color:#1B2A24
+  classDef step fill:#E8F0EB,stroke:#24493E,color:#1B2A24
+  class L,O,H gate
+  class A,B,I,O1,G step
